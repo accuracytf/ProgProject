@@ -1,2 +1,3 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"C:/Users/milhan/source/repos/ProgProject/ProgProject/Content/biran.JPG","C:/Users/milhan/source/repos/ProgProject/ProgProject/Content/bin/DesktopGL/biran.JPG.png.xnb","TextureProcessor","Texture2DContent",15211,170905,0,1381555
+"C:/Programmering/ProgProject/ProgProject/Content/Owlet_Monster_Left.png","C:/Programmering/ProgProject/ProgProject/Content/bin/DesktopGL/Owlet_Monster_Left.xnb","TextureProcessor","Texture2DContent",1882,16469,0,127385
+"C:/Programmering/ProgProject/ProgProject/Content/Owlet_Monster_Right.png","C:/Programmering/ProgProject/ProgProject/Content/bin/DesktopGL/Owlet_Monster_Right.xnb","TextureProcessor","Texture2DContent",1817,16469,0,0019499

@@ -11,16 +11,18 @@ namespace ProgProject
 {
     internal class Player
     {
-        
-        public Texture2D playerTexture;
+
+        public Texture2D playerTexture_Left, playerTexture_Right;
         public Vector2 playerPos;
         public Vector2 velocity;
         bool isGrounded;
+        bool movingLeft;
+        bool movingRight;
 
-
-        public Player(Texture2D pTexture, Vector2 position)
+        public Player(Texture2D pTexture_Left, Texture2D pTexture_Right, Vector2 position)
         {
-            this.playerTexture = pTexture;
+            this.playerTexture_Left = pTexture_Left;
+            this.playerTexture_Right = pTexture_Right;
             this.playerPos = position;
             isGrounded = false;
 
@@ -32,10 +34,14 @@ namespace ProgProject
             playerPos += velocity;
             if (ks.IsKeyDown(Keys.A)){
                 velocity.X = -3f;
+                movingLeft = true;
+                movingRight = false;
             }
             if (ks.IsKeyDown(Keys.D))
             {
                 velocity.X = 3f;
+                movingLeft = false;
+                movingRight = true;
             }
             if (ks.IsKeyDown(Keys.Space) && isGrounded)
             {
@@ -49,7 +55,7 @@ namespace ProgProject
                 velocity.Y += 0.15f * i;
             }
             
-            if (playerPos.Y + playerTexture.Height >= 720)
+            if (playerPos.Y + playerTexture_Right.Height >= 720)
             {
                 isGrounded = true;
             }
@@ -58,14 +64,26 @@ namespace ProgProject
                 velocity.Y = 0f;
             }
 
+            if (playerPos.X + playerTexture_Right.Width > 1280)
+            {
+                playerPos.X = 1280 - playerTexture_Right.Width;
+            }
+            if (playerPos.X < 0)
+            {
+                playerPos.X = 0;
+            }
+         
 
 
 
         }
         public void Draw(SpriteBatch spriteBatch)
         {
+            if(movingLeft)
+                spriteBatch.Draw(playerTexture_Left, playerPos, Color.White);
+            if(movingRight)
+                spriteBatch.Draw(playerTexture_Right, playerPos, Color.White);
 
-            spriteBatch.Draw(playerTexture, playerPos, Color.White);
 
             // TODO: Add your drawing code here
 

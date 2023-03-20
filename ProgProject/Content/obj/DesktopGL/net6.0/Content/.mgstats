@@ -1,1 +1,3 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Programmering/ProgProject/ProgProject/Content/Owlet_Monster_Left.png","C:/Programmering/ProgProject/ProgProject/Content/bin/DesktopGL/Content/Owlet_Monster_Left.xnb","TextureProcessor","Texture2DContent",1882,16469,0,1015899
+"C:/Programmering/ProgProject/ProgProject/Content/Owlet_Monster_Right.png","C:/Programmering/ProgProject/ProgProject/Content/bin/DesktopGL/Content/Owlet_Monster_Right.xnb","TextureProcessor","Texture2DContent",1817,16469,0,0021074

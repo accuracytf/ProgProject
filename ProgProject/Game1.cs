@@ -37,8 +37,8 @@ namespace ProgProject
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            player = new(Content.Load<Texture2D>("biran"), new Vector2(50,50));
-
+            player = new(Content.Load<Texture2D>("Owlet_Monster_Left"), Content.Load<Texture2D>("Owlet_Monster_Right"), new Vector2(50,50));
+            
 
             // TODO: use this.Content to load your game content here
         }
