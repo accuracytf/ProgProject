@@ -17,7 +17,6 @@ namespace ProgProject
         public Vector2 velocity;
         bool isGrounded;
         bool movingLeft;
-        bool movingRight;
 
         public Player(Texture2D pTexture_Left, Texture2D pTexture_Right, Vector2 position)
         {
@@ -32,21 +31,21 @@ namespace ProgProject
             KeyboardState ks = Keyboard.GetState();
 
             playerPos += velocity;
-            if (ks.IsKeyDown(Keys.A)){
+            velocity.X = 0;
+            if (ks.IsKeyDown(Keys.A))
+            {
                 velocity.X = -3f;
-                movingLeft = true;
-                movingRight = false;
+                movingLeft = true;            
             }
             if (ks.IsKeyDown(Keys.D))
             {
                 velocity.X = 3f;
                 movingLeft = false;
-                movingRight = true;
             }
             if (ks.IsKeyDown(Keys.Space) && isGrounded)
             {
-                playerPos.Y -= 10f;
-                velocity.Y = -5f;
+                playerPos.Y -= 20f;
+                velocity.Y = -10f;
                 isGrounded = false;
             }
             if (!isGrounded)
@@ -72,7 +71,7 @@ namespace ProgProject
             {
                 playerPos.X = 0;
             }
-         
+        
 
 
 
@@ -81,7 +80,7 @@ namespace ProgProject
         {
             if(movingLeft)
                 spriteBatch.Draw(playerTexture_Left, playerPos, Color.White);
-            if(movingRight)
+            if(!movingLeft)
                 spriteBatch.Draw(playerTexture_Right, playerPos, Color.White);
 
 
