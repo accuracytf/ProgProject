@@ -56,3 +56,7 @@ C:\Programmering\ProgProject\ProgProject\bin\Debug\net6.0\Content\biran.png.xnb
 C:\Programmering\ProgProject\ProgProject\bin\Debug\net6.0\Content\Owlet_Monster.xnb
 C:\Programmering\ProgProject\ProgProject\bin\Debug\net6.0\Content\Owlet_Monster_Left.xnb
 C:\Programmering\ProgProject\ProgProject\bin\Debug\net6.0\Content\Owlet_Monster_Right.xnb
+C:\Users\milhan\source\repos\ProgProject\ProgProject\bin\Debug\net6.0\Content\biran.png.xnb
+C:\Users\milhan\source\repos\ProgProject\ProgProject\bin\Debug\net6.0\Content\Owlet_Monster.xnb
+C:\Users\milhan\source\repos\ProgProject\ProgProject\bin\Debug\net6.0\Content\Owlet_Monster_Left.xnb
+C:\Users\milhan\source\repos\ProgProject\ProgProject\bin\Debug\net6.0\Content\Owlet_Monster_Right.xnb

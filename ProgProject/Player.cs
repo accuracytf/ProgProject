@@ -62,7 +62,14 @@ namespace ProgProject
             {
                 velocity.Y = 0f;
             }
-
+            if(playerPos.X < 0)
+            {
+                playerPos.X = 0;
+            }
+            if(playerPos.X + playerTexture_Right.Width > 1280)
+            {
+                playerPos.X = 1280 - playerTexture_Right.Width;
+            }
 
 
 

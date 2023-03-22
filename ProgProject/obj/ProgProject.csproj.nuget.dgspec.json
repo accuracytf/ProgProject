@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Programmering\\ProgProject\\ProgProject\\ProgProject.csproj": {}
+    "C:\\Users\\milhan\\source\\repos\\ProgProject\\ProgProject\\ProgProject.csproj": {}
   },
   "projects": {
-    "C:\\Programmering\\ProgProject\\ProgProject\\ProgProject.csproj": {
+    "C:\\Users\\milhan\\source\\repos\\ProgProject\\ProgProject\\ProgProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Programmering\\ProgProject\\ProgProject\\ProgProject.csproj",
+        "projectUniqueName": "C:\\Users\\milhan\\source\\repos\\ProgProject\\ProgProject\\ProgProject.csproj",
         "projectName": "ProgProject",
-        "projectPath": "C:\\Programmering\\ProgProject\\ProgProject\\ProgProject.csproj",
-        "packagesPath": "C:\\Users\\milto\\.nuget\\packages\\",
-        "outputPath": "C:\\Programmering\\ProgProject\\ProgProject\\obj\\",
+        "projectPath": "C:\\Users\\milhan\\source\\repos\\ProgProject\\ProgProject\\ProgProject.csproj",
+        "packagesPath": "C:\\Users\\milhan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\milhan\\source\\repos\\ProgProject\\ProgProject\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\milto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\milhan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +59,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -64,7 +69,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
