@@ -17,6 +17,7 @@ namespace ProgProject
         public Vector2 velocity;
         bool isGrounded;
         bool movingLeft;
+        float jumpStrength = 6;
 
         public Player(Texture2D pTexture_Left, Texture2D pTexture_Right, Vector2 position)
         {
@@ -34,43 +35,63 @@ namespace ProgProject
             velocity.X = 0;
             if (ks.IsKeyDown(Keys.A))
             {
-                velocity.X = -3f;
+                velocity.X = -4f;
                 movingLeft = true;            
             }
             if (ks.IsKeyDown(Keys.D))
             {
-                velocity.X = 3f;
+                velocity.X = 4f;
                 movingLeft = false;
             }
+            
             if (ks.IsKeyDown(Keys.Space) && isGrounded)
             {
-                playerPos.Y -= 20f;
-                velocity.Y = -10f;
-                isGrounded = false;
+                jumpStrength += 0.195f;
+                
             }
             if (!isGrounded)
             {
                 float i = 1;
-                velocity.Y += 0.15f * i;
+                velocity.Y += 0.52f * i;
             }
             
-            if (playerPos.Y + playerTexture_Right.Height >= 720)
-            {
-                isGrounded = true;
-            }
+            
+
+            //hopp sak
             if (isGrounded)
             {
-                velocity.Y = 0f;
+                if (jumpStrength > 6 && !ks.IsKeyDown(Keys.Space))
+                {
+                    if (jumpStrength > 15)
+                        jumpStrength = 15;
+                    playerPos.Y -= jumpStrength * 2;
+                    velocity.Y = -jumpStrength;
+                    isGrounded = false;
+                }
+                else
+                    velocity.Y = 0f;
             }
-            if(playerPos.X < 0)
+
+            if (!ks.IsKeyDown(Keys.Space))
+            {
+                jumpStrength = 6;
+            }
+
+            //inte köra ut ur skärmen
+            if (playerPos.X < 0)
             {
                 playerPos.X = 0;
             }
-            if(playerPos.X + playerTexture_Right.Width > 1280)
+            if (playerPos.Y + playerTexture_Right.Height >= 720)
+            {
+                playerPos.Y = 720 - playerTexture_Right.Height;
+                isGrounded = true;
+            }
+            if (playerPos.X + playerTexture_Right.Width > 1280)
             {
                 playerPos.X = 1280 - playerTexture_Right.Width;
             }
-
+            
 
 
 
