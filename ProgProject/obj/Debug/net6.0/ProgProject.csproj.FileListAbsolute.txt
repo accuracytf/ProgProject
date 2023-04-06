@@ -53,10 +53,14 @@ C:\Programmering\ProgProject\ProgProject\obj\Debug\net6.0\ProgProject.pdb
 C:\Programmering\ProgProject\ProgProject\obj\Debug\net6.0\ProgProject.genruntimeconfig.cache
 C:\Programmering\ProgProject\ProgProject\obj\Debug\net6.0\ref\ProgProject.dll
 C:\Programmering\ProgProject\ProgProject\bin\Debug\net6.0\Content\biran.png.xnb
-C:\Programmering\ProgProject\ProgProject\bin\Debug\net6.0\Content\Owlet_Monster.xnb
-C:\Programmering\ProgProject\ProgProject\bin\Debug\net6.0\Content\Owlet_Monster_Left.xnb
-C:\Programmering\ProgProject\ProgProject\bin\Debug\net6.0\Content\Owlet_Monster_Right.xnb
 C:\Users\milhan\source\repos\ProgProject\ProgProject\bin\Debug\net6.0\Content\biran.png.xnb
 C:\Users\milhan\source\repos\ProgProject\ProgProject\bin\Debug\net6.0\Content\Owlet_Monster.xnb
 C:\Users\milhan\source\repos\ProgProject\ProgProject\bin\Debug\net6.0\Content\Owlet_Monster_Left.xnb
 C:\Users\milhan\source\repos\ProgProject\ProgProject\bin\Debug\net6.0\Content\Owlet_Monster_Right.xnb
+C:\Programmering\ProgProject\ProgProject\bin\Debug\net6.0\Content\platform1.xnb
+C:\Programmering\ProgProject\ProgProject\bin\Debug\net6.0\Content\pTexture_Left.xnb
+C:\Programmering\ProgProject\ProgProject\bin\Debug\net6.0\Content\pTexture_Right.xnb
+C:\Programmering\ProgProject\ProgProject\bin\Debug\net6.0\Content\MossyPlatforms.xnb
+C:\Programmering\ProgProject\ProgProject\bin\Debug\net6.0\Content\MossyPlat.xnb
+C:\Programmering\ProgProject\ProgProject\bin\Debug\net6.0\Content\GrassPlatform.xnb
+C:\Programmering\ProgProject\ProgProject\bin\Debug\net6.0\Content\GrPlatform.xnb

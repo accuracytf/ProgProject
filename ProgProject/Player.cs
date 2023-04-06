@@ -15,7 +15,8 @@ namespace ProgProject
         public Texture2D playerTexture_Left, playerTexture_Right;
         public Vector2 playerPos;
         public Vector2 velocity;
-        bool isGrounded;
+        public Rectangle playerTopRect,playerBotRect;
+        public bool isGrounded;
         bool movingLeft;
         float jumpStrength = 6;
 
@@ -25,7 +26,17 @@ namespace ProgProject
             this.playerTexture_Right = pTexture_Right;
             this.playerPos = position;
             isGrounded = false;
+        }
 
+        public Rectangle GetTopRect()
+        {
+            playerTopRect = new Rectangle((int)playerPos.X, (int)playerPos.Y, playerTexture_Right.Width, 2);
+            return playerTopRect;
+        }
+        public Rectangle GetBotRect()
+        {
+            playerBotRect = new Rectangle((int)playerPos.X, (int)playerPos.Y + playerTexture_Right.Height-2, playerTexture_Right.Width, 2);
+            return playerBotRect;
         }
         public void Update()
         {
@@ -36,26 +47,29 @@ namespace ProgProject
             if (ks.IsKeyDown(Keys.A))
             {
                 velocity.X = -4f;
-                movingLeft = true;            
+                movingLeft = true;
             }
             if (ks.IsKeyDown(Keys.D))
             {
                 velocity.X = 4f;
                 movingLeft = false;
             }
-            
+            if (playerPos.Y + playerTexture_Right.Height >= 720)
+            {
+                playerPos.Y = 720 - playerTexture_Right.Height;
+                isGrounded = true;
+            }
             if (ks.IsKeyDown(Keys.Space) && isGrounded)
             {
                 jumpStrength += 0.195f;
-                
             }
             if (!isGrounded)
             {
                 float i = 1;
                 velocity.Y += 0.52f * i;
             }
-            
-            
+
+
 
             //hopp sak
             if (isGrounded)
@@ -78,29 +92,23 @@ namespace ProgProject
             }
 
             //inte köra ut ur skärmen
+
             if (playerPos.X < 0)
             {
                 playerPos.X = 0;
-            }
-            if (playerPos.Y + playerTexture_Right.Height >= 720)
-            {
-                playerPos.Y = 720 - playerTexture_Right.Height;
-                isGrounded = true;
-            }
+            } 
+            
             if (playerPos.X + playerTexture_Right.Width > 1280)
             {
                 playerPos.X = 1280 - playerTexture_Right.Width;
             }
-            
-
-
 
         }
         public void Draw(SpriteBatch spriteBatch)
         {
-            if(movingLeft)
+            if (movingLeft)
                 spriteBatch.Draw(playerTexture_Left, playerPos, Color.White);
-            if(!movingLeft)
+            if (!movingLeft)
                 spriteBatch.Draw(playerTexture_Right, playerPos, Color.White);
 
 

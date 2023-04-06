@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System;
 
 namespace ProgProject
 {
@@ -9,6 +10,7 @@ namespace ProgProject
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
         Player player;
+        Platform platform;
 
         int width, heigth;
 
@@ -37,8 +39,8 @@ namespace ProgProject
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            player = new(Content.Load<Texture2D>("Owlet_Monster_Left"), Content.Load<Texture2D>("Owlet_Monster_Right"), new Vector2(50,50));
-            
+            player = new(Content.Load<Texture2D>("pTexture_Left"), Content.Load<Texture2D>("pTexture_Right"), new Vector2(50, 720 - Content.Load<Texture2D>("pTexture_Right").Height));
+            platform = new(Content.Load<Texture2D>("GrPlatform"), new Vector2(200, 500));
 
             // TODO: use this.Content to load your game content here
         }
@@ -49,7 +51,23 @@ namespace ProgProject
                 Exit();
 
             // TODO: Add your update logic here
+            
+            if (player.GetBotRect().Intersects(platform.GetRect()))
+            {
+                player.isGrounded = true;
+                player.playerPos.Y = platform.GetRect().Top - player.playerTexture_Right.Height;
+            }
+            else if (player.GetTopRect().Intersects(platform.GetRect()))
+            {
+                player.velocity.Y = 1;
+            }
+            else
+            {
+                player.isGrounded =false;
+            }
+
             player.Update();
+            
             base.Update(gameTime);
         }
 
@@ -60,6 +78,7 @@ namespace ProgProject
 
             _spriteBatch.Begin();
             player.Draw(_spriteBatch);
+            platform.Draw(_spriteBatch);
             _spriteBatch.End();
             // TODO: Add your drawing code here
 
