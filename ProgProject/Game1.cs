@@ -11,7 +11,7 @@ namespace ProgProject
         private SpriteBatch _spriteBatch;
         Player player;
         Platform platform;
-
+        Rectangle platforms[]; 
         int width, heigth;
 
         public Game1()
@@ -38,7 +38,7 @@ namespace ProgProject
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            
             player = new(Content.Load<Texture2D>("pTexture_Left"), Content.Load<Texture2D>("pTexture_Right"), new Vector2(50, 720 - Content.Load<Texture2D>("pTexture_Right").Height));
             platform = new(Content.Load<Texture2D>("GrPlatform"), new Vector2(200, 500));
 
@@ -55,7 +55,7 @@ namespace ProgProject
             if (player.GetBotRect().Intersects(platform.GetRect()))
             {
                 player.isGrounded = true;
-                player.playerPos.Y = platform.GetRect().Top - player.playerTexture_Right.Height;
+                player.playerPos.Y = platform.GetRect().Top - player.playerTexture_Right.Height+1;
             }
             else if (player.GetTopRect().Intersects(platform.GetRect()))
             {

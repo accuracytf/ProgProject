@@ -21,7 +21,7 @@ namespace ProgProject
 
         public Rectangle GetRect() 
         {
-            platformRect = new Rectangle((int)platformPos.X, (int)platformPos.Y, platformTexture.Width, platformTexture.Height);
+            platformRect = new Rectangle((int)platformPos.X, (int)platformPos.Y-1, platformTexture.Width, platformTexture.Height+1);
             return platformRect;
         }
         public void Draw(SpriteBatch spriteBatch)
